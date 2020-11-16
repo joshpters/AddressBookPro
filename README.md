@@ -2,7 +2,7 @@
 
 Address Book is a mini web application where users can store/edit their contacts.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](/screenshot.JPG)
 
 The purpose is to practice zero-to-completion of a .NET Core + MVC design pattern application.
 
