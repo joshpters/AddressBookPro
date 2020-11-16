@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AddressBookPro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="light-blue-bg">
+    <div class="d-flex flex-column justify-content-center" style="height: calc(100vh - 60px)">
+        <div class="container p-5">
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <h2>Address Book</h2>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+            $('.table').show();
+        });
+
+    </script>
+
+    @if (TempData["error"] != null)
+    {
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '@TempData["error"]',
+            })
+        </script>
+    }
+
+    @if (TempData["success"] != null)
+    {
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '@TempData["success"]',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    }
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

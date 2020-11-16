@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LandingPageLayout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col offset-1">
+            <div class="row">
+                <div class="col">
+                    <h1>Address Book</h1>
+                    <p>The world's simplest address book</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto text-right">
+                    <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+                </div>
+                <span>//</span>
+                <div class="col text-left">
+                    <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
